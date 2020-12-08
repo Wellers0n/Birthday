@@ -1,0 +1,22 @@
+@model Pessoa
+@{
+    var pessoa = Model;
+}
+<form action="/Pessoas/Editar" method="POST">
+    <div class="form-group">
+        <label>Matricula</label>
+        <input disabled type="number" class="form-control" name="matricula" value="@pessoa.Matricula">
+    </div>
+
+    <div class="form-group">
+        <label>Nome</label>
+        <input disabled type="text" class="form-control" name="nome" value="@pessoa.Nome">
+    </div>
+    <div class="form-group">
+        <label>Data</label>
+        <input disabled type="datetime" class="form-control" name="nome" value="@pessoa.Data">
+    </div>
+    <a class="btn btn-primary" href="/Pessoas/Lista">Voltar</a>
+    <a class="btn btn-primary" href="/Pessoas/Aniversariantes">Voltar para a lista de aniversariantes</a>
+
+</form>

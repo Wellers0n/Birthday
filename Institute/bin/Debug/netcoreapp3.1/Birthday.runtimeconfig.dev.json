@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Welle\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Welle\\.nuget\\packages"
+    ]
+  }
+}

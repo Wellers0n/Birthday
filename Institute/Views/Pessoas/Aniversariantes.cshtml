@@ -1,0 +1,38 @@
+@model List<Pessoa>
+@{
+    var aniversariantes = Model;
+}
+
+<form action="/Pessoas/Aniversariantes" method="GET">
+    <div class="form-group">
+        <label>Buscar</label>
+        <input type="text" class="form-control" name="busca">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    <table class="table tableHeader">
+        <thead>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var aniversariante in aniversariantes)
+            {
+                <tr>
+                    <th scope="row">@aniversariante.Matricula</th>
+                    <td>@aniversariante.Nome</td>
+                    <td>@aniversariante.Data</td>
+                    <td class="inline">
+                        <a href="/Pessoas/Detalhes?matricula=@aniversariante.Matricula" class="btn btn-primary mr-1">Detalhe</a>
+                        <a href="/Pessoas/Editar?matricula=@aniversariante.Matricula" class="btn btn-primary mr-1">Editar</a>
+                        <a href="/Pessoas/Deletar?matricula=@aniversariante.Matricula" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

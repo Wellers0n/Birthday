@@ -1,0 +1,38 @@
+@model List<Pessoa>
+@{
+    var pessoas = Model;
+}
+
+<form action="/Pessoas/Lista" method="GET">
+    <div class="form-group">
+        <label>Buscar</label>
+        <input type="text" class="form-control" name="busca">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    <table class="table tableHeader">
+        <thead>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pessoa in pessoas)
+            {
+                <tr>
+                    <th scope="row">@pessoa.Matricula</th>
+                    <td>@pessoa.Nome</td>
+                    <td>@pessoa.Data</td>
+                    <td class="inline">
+                        <a href="/Pessoas/Detalhes?matricula=@pessoa.Matricula" class="btn btn-primary mr-1">Detalhe</a>
+                        <a href="/Pessoas/Editar?matricula=@pessoa.Matricula" class="btn btn-primary mr-1">Editar</a>
+                        <a href="/Pessoas/Deletar?matricula=@pessoa.Matricula" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
