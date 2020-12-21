@@ -6,7 +6,7 @@
 <p/>
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/wellers0n/Birthday.svg"/>
-    <img src="https://img.shields.io/github/license/wellers0n/Birthday.svg"/>
+    <img src="https://img.shields.io/github/license/wellers0n/Birthday"/>
     <a href="https://twitter.com/wellers0n_" target="_blank">
         <img src="https://img.shields.io/twitter/url/https/wellers0n_.svg?style=social"/>
     </a>
